@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .card{
+        background: linear-gradient(135deg, #00feba, #5b548a);
+        width: 90%;
+        max-width: 470px;
+        text-align: center;
+        margin: 60px auto 0;
+        color: #fff;
+        border-radius: 20px;
+        padding: 20px 30px;
+    }
+    .search{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .search input{
+        flex: 1;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        font-size: 18px;
+        padding: 10px 20px;
+        margin-right: 14px;
+        background: #ebfffc;
+        height: 40px;
+        color: #555;
+    }
+    .search button{
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        padding: 3px 5px;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        background-color: #ebfffc;
+    }
+    .search img{
+        width: 50px;
+    }
+    .weather{
+        margin-top: 20px;
+        margin-bottom: 15px;
+
+    }
+    .weather img{
+        width: 200px;
+    }
+    .weather h1{
+        font-size: 60px;
+        font-weight: 600;
+    }
+    .weather h2{
+        font-size: 35px;
+        font-weight: 600;
+    }
+    .details{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .col{
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+    .col img{
+        width: 80px;
+        padding-right: 14px;
+    }
+    .details div p{
+        font-size: 19px;
+    }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="search">
+        <input type="text" placeholder="Search city">
+        <button><img src="https://www.thinkafrica.fi/wp-content/uploads/2019/04/search-icon.png"></button>
+    </div>
+        <div class="weather">
+            <img src="https://th.bing.com/th/id/R.54893576821fe547d718342c261e08e5?rik=YpFsgEaYSxvYQQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_7021.png&ehk=coomteSxV4P7pw7DDv2HfOMh8Ru4G33MFx%2bj8Pm%2fIBE%3d&risl=&pid=ImgRaw&r=0">
+            <h1>22 °C</h1>
+            <h2>New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="https://cdn3.iconfinder.com/data/icons/disaster-and-weather-conditions/48/20-512.png">
+                    <div>
+                        <p class="wind">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="https://th.bing.com/th/id/R.d4e4acd0729e3d9fc1ee9ba24c99fd97?rik=9CwptvFcJ6d9LQ&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fwind-clipart-transparent%2fwind-clipart-transparent-13.png&ehk=loxXSB3NNeK7y6O62cwdzx5jtz9LBL9wtfLvWNbF7Mg%3d&risl=&pid=ImgRaw&r=0">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</body>
+</html>
