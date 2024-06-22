@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const person = {
+            name: 'John Doe',
+            age: 30,
+            occupation: 'Software Developer'
+        };
+
+        person.name = 'jane Doe'
+        person.age += 1;
+        person.hobby = 'Reading'
+
+        console.log(person)
+
+
+        const company = {
+            name: 'Tech Corp',
+            employees: {
+                employee1: {
+                    name: 'Alice',
+                    age: 28
+                },
+                employee2: {
+                    name: 'Bob',
+                    age: 34
+                }
+            }
+        };
+
+        console.log(company.employees.employee1.name, company.employees.employee2.age)
+        
+        const calculator = {
+            a: 5,
+            b: 3,
+            add: function(){
+                return this.a + this.b
+            },
+            subtract: function(){
+                return this.a - this.b
+            }
+        }
+        console.log(calculator.add(), calculator.subtract())
+
+        const car = {
+            make: 'toyoto',
+            model: 'corolla',
+            year: 2019,
+            color: 'blue'
+        }
+        delete car.make
+
+        for (let[key, value] of Object.entries(car)){
+            console.log(`key is ${key} and value is ${value}`)
+        }
+
+        
+
+        const user = {
+            username: 'jhondoe',
+            email: 'jhondoe@example.com',
+            address: {
+                city: 'New York',
+                zip: '100012'
+            }
+        }
+
+        const {username, email} = user
+        const {city, zip} = user.address
+        console.log(city, zip, username, email)
+
+
+        const obj1 = {
+            a: 1,
+            b: 2
+        }
+
+        const obj2 = {
+            c: 3,
+            b: 4
+        }
+
+        const concatObj = {...obj1, ...obj2}
+        console.log(concatObj)
+
+
+
+
+    </script>
+</body>
+
+</html>
