@@ -94,6 +94,78 @@
         console.log(concatObj)
 
 
+        const reverseString = (str) => str.split(',').reverse().join(',')
+
+        console.log(reverseString('Checks, if, a, string'))
+
+        const palindromeString = (str) => {
+
+            let cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+            
+           let reverseStr = cleanedStr.split('').reverse().join('');
+
+           return reverseStr === str.toLowerCase
+           
+        }
+
+        console.log(palindromeString('raceCar'))
+
+
+        const vowelsFunc = (str) => {
+            const vowels = 'aeiouAEIOU'
+
+            let count = 0
+
+            for(let char of str){
+                if(vowels.includes(char)){
+                    count++
+                }
+            }
+            return count;
+
+        }
+        console.log(vowelsFunc('racecar here'))
+
+        const longestWord = (str) => {
+            let words = str.split(' ');
+
+            let longestOne = '';
+
+            for(let word of words){
+                if(word.length > longestOne.length){
+                    longestOne = word
+                }
+            }
+            return longestOne;
+
+        }
+        console.log(longestWord('The quick brown fox jumps over the lazy dog'))
+
+
+        const fooBar = (str, searchValue, newValue) => {
+            return str.split(searchValue).join(newValue)
+        }
+
+        console.log(fooBar('foo bar foo', 'foo', 'bar'))
+
+        const titleLetter = (str) => {
+            let words = str.split(" ")
+
+            let titleWords = ''
+
+            let captailWords = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            
+            return captailWords.join(' ')
+
+        }
+        console.log(titleLetter('the game has been set'))
+
+
+
+
+
+
+
 
 
     </script>
