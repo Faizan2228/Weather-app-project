@@ -204,7 +204,54 @@
         }
         console.log(replaceSpace('hello  wor l d', 'hello  wor l d'))
 
-        
+        const countWords = (str) => {
+            let words = str.split(' ')
+            console.log(words.length)
+
+            let count = 0
+
+            for(let word of words){
+                count += 1
+            }
+
+            return count
+        }
+        console.log(countWords('hello world there it is hey'))
+
+        const sumOfArr = (a) => {
+            return a.reduce((sum, current) => sum + current,0)
+        }
+        console.log(sumOfArr([1,2,3,4,5]))
+
+        const findMax = (arr) => {
+             Math.max(...arr)
+             return arr.reverse()
+
+        }
+        console.log(findMax([1,23,3,4,5]))
+
+        const checkElement = (arr1,arr2) => {
+            return arr1.includes(arr2)
+        }
+        console.log(checkElement([12,13,14,15],14))
+
+
+        const removeDuplicate = (arr) => [...new Set(arr)]
+        console.log(removeDuplicate([1,2,3,3,4,5,4,5]))
+
+        const removeDuplicate2 = (arr) => {
+            let result = ''
+
+            arr.filter((e) => {
+                if(result.includes(e)){
+                    result.push(e)
+                }
+            })
+            
+            return result
+
+        }
+        console.log(removeDuplicate2([1,2,3,3,4,5,4,5]))
 
 
 
