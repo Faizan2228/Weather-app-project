@@ -160,6 +160,73 @@
         }
         console.log(titleLetter('the game has been set'))
 
+        const duplicateStr = (str) => {
+            let words = str.split('')
+
+            let removeDuplicate = new Set()
+
+            for(let char of words){
+                removeDuplicate.add(char)
+                
+            }
+            return [...removeDuplicate].join('')
+
+        }
+        console.log(duplicateStr('hello there world'))
+
+        const anagramProgram = (str1, str2) => {
+
+            str1.length !== str2 ? true : false
+
+            let str1Split = str1.split('').sort().join('')
+            let str2Split = str2.split('').sort().join('')
+           
+            return str1Split === str2Split
+            
+        }
+        console.log(anagramProgram('racecar', 'carrace'))
+
+        const removeNonAlphaNumeric = (str) => {
+
+            const remove = str.replace(/[^A-Za-z0-9]/g, '')
+
+            return remove
+        }
+        console.log(removeNonAlphaNumeric('hello world 123 @#$@'))
+
+        const replaceSpace = (str, str2) => {
+
+            const replacing = str.replace(/ /g, '#')
+
+
+            let split = replacing + str2.split(' ').join('$')
+            return split
+        }
+        console.log(replaceSpace('hello  wor l d', 'hello  wor l d'))
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
