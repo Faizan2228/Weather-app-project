@@ -240,10 +240,10 @@
         console.log(removeDuplicate([1,2,3,3,4,5,4,5]))
 
         const removeDuplicate2 = (arr) => {
-            let result = ''
+            let result = []
 
             arr.filter((e) => {
-                if(result.includes(e)){
+                if(!result.includes(e)){
                     result.push(e)
                 }
             })
@@ -254,8 +254,33 @@
         console.log(removeDuplicate2([1,2,3,3,4,5,4,5]))
 
 
+        const mergedArr = (arr1, arr2) => [...arr1,...arr2]
+        console.log(mergedArr(['hello'],['world']))
 
 
+        const intersectArr = (arr1, arr2) => {
+            return arr1.filter((arr) => arr2.includes(arr))
+        }
+        console.log(intersectArr([1,2,3],[2,3,4]))
+
+
+        const flattenArr = (arr) => arr.flat()
+        console.log(flattenArr([[1,2],[2,3,4]]))
+
+        
+        const chunkArr = (arr, size) => {
+            let result = []
+
+            for(let i = 0; i < arr.length; i += size){
+                result.push(arr.slice(i, i + size))
+            }
+            return result
+
+        }
+        console.log(chunkArr([1,2,3,4,5],2))
+
+
+        
 
 
 
