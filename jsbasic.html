@@ -353,7 +353,47 @@
         }
         console.log(calcultor('-', 2,2))
 
+        const countOccurence = (str1, str2) => {
+            let count = 0
+            for(let x of str1){
+                if(str2.includes(x)){
+                    count++
+                }
+            }
+            return count
+        }
+        console.log(countOccurence('hello world', 'w'))
+
+        const firstLetterCapital = (str) => {
+            let adjustedStr = str.split(' ')
+            let capital = adjustedStr.map((word) =>{
+                return word.charAt(0).toUpperCase() + word.slice(1)
+           })
+            return capital.join(' ')
+        }
+        console.log(firstLetterCapital('hello world hello world'))
+
         
+        const letterVowels = (str) => {
+
+            let vowels = 'aeiouAEIOU'
+            let strSplited = str.split('')
+
+            let count = 0
+
+            for(let x of strSplited){
+                if(vowels.includes(x)){
+                     count++
+                }
+            }
+            return count
+
+            
+        }
+        console.log(letterVowels('hello world hello world'))
+
+
+
 
 
 
