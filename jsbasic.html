@@ -317,13 +317,43 @@
         }
         console.log(reverseStr('hello world'))
 
+        const findAvg = (arr) => {
+            let sum = 0
 
+            for(let i = 0; i < arr.length; i++){
+                sum += arr[i]
+            }
+            return sum / arr.length
 
+        }
+        console.log(findAvg([1,2,3,4,5]))
 
+        const starLoop = (num) => {
+            for(let i = 1; i <= num; i++){
+                console.log('*'.repeat(i))
+            }
+        }
+        starLoop(1)
 
+        const calcultor = (operator, num1, num2) => {
+            if(operator === '+'){
+                return num1 + num2;
+            }
+            else if(operator === '*'){
+                return num1 * num2
+            }else if(operator === '/'){
+                return num1 / num2
+            }
+            else if(operator === '-'){
+                return num1 - num2
+            }
+            else{
+                console.log('enter numbers with operator')
+            }
+        }
+        console.log(calcultor('-', 2,2))
 
-
-
+        
 
 
 
