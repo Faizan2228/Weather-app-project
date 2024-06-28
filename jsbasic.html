@@ -392,6 +392,75 @@
         }
         console.log(letterVowels('hello world hello world'))
 
+        function greet(name){
+            return name
+        }
+        console.log(greet('amaan'));
+
+        (function(){
+            console.log("Amaan")
+        })();
+
+        const greetings = function(name){
+            return name
+        }
+        console.log(greetings("Amaan"))
+
+        function Person(name, age){
+            this.name = name
+            this.age = age
+            return this.name + this.age
+        }
+        const instanceObj = new Person('Amaan',23)
+        console.log(instanceObj.age)
+
+        async function greetByName(){
+            console.log('amaan')
+        }
+        console.log(greetByName())
+
+
+        const findLongestWord = (str) => {
+            let words = str.split(' ')
+
+            let maxLength = ''
+
+            for(let x of words){
+                if(x.length > maxLength.length){
+                    maxLength = x
+                }
+            }
+            return maxLength.length
+        }
+        console.log(findLongestWord('hello world hellloo ll'))
+        
+
+        const removeFalseValues = (arr) => {
+            return arr.filter(Boolean)
+        }
+        console.log(removeFalseValues([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]))
+
+        const countAppearance = (arr,str) => arr.reduce((count, e) => (e === str ? count+ 1 : count), 0)
+
+        console.log(countAppearance([1, 2, 3, 4, 3, 2, 1, 3], 1))
+
+
+        const repeatString = (num, str) => num > 0 ? str.repeat(num) : str
+
+        console.log(repeatString(5,'hello '))
+
+
+
+        const truncateStr = (num, str) => 
+            str.length > num ? str.slice(0,num) + '...' : str
+        console.log(truncateStr(4, 'helllo'))
+
+
+
+        const fruits = {bananas: 300, Orange: 200, Apples: 500}
+        for(let [key, value] of Object.entries(fruits)){
+            console.log(`key is ${key} and values is ${value}`)
+        }
 
 
 
@@ -399,19 +468,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
     </script>
 </body>
