@@ -462,11 +462,65 @@
             console.log(`key is ${key} and values is ${value}`)
         }
 
+        const originalObj = {
+            name: 'Amaan',
+            country : 'india',
+        }
+        const cloneObj = Object.assign({}, originalObj)
+        console.log(cloneObj)
+
+        const countKeys = (obj) => {
+
+            let count = 0
+
+            for(let x in obj){
+                count++
+}
+    return count
+        }
+        console.log(countKeys({
+            name: 'Amaan',
+            country : 'india',
+            age: 23
+        }))
+
+        const randomStr = (len) => {
+            let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+?{[\~`]}'
+
+            let res = ''
+
+            for(let i = 0; i < len; i++){
+                let getRandomStr = characters.charAt(Math.floor(Math.random() * characters.length))
+                res += getRandomStr
+
+            }
+            return res
+        }
+        console.log(randomStr(10))
 
 
+        let trimStr = '         hello world    '.trim()
+        console.log(trimStr)
 
+        const originalObj2 = {
+            name:'Amaan',
+            country: 'india'
+        }
+        let res = JSON.stringify(originalObj2)
+        console.log(res)
 
+        const removeValue = (arr, value) => {
+            let res = []
 
+            for(let x of arr){
+                if(x !== value){
+                    res.push(x)
+                }
+            }
+
+        return Array.from(new Set(res))
+        }
+        console.log(removeValue([1,2,3,4,4,2],3))
 
         
 
