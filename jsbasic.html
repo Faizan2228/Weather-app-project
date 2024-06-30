@@ -549,7 +549,127 @@
 
         const nReplace$ = (str) =>  str.replace(/[0-9]/, '$')
         console.log(nReplace$('hello2 world3'))
+
+
+        function parent(){
+            var carName = 'Maratui';
+
+            function child(){
+                console.log(carName)
+                carName = "Mercidies"
+                console.log(carName)
+
+            }
+            return child()
+
+        }
+        parent()   
         
+        
+        function createCounter(){
+            let count = 0
+            return function(){
+                return count++
+            }
+        }
+        const increaseCounter = createCounter()
+        console.log(increaseCounter(),increaseCounter(),increaseCounter())
+
+
+        function createPerson(name){
+            let age = 0
+            return{
+                getAge: function(){
+                    return age
+                },
+                growOlder: function(){
+                    return age++
+                },
+                getName: function(){
+                    return name
+                }
+            }
+        }
+
+        const personClousers = createPerson('Jhon')
+        console.log(personClousers.getAge())
+        personClousers.growOlder()
+        personClousers.growOlder()
+        personClousers.growOlder()
+        console.log(personClousers.getAge())
+
+
+        const counterClosures = function(){
+            let counter = 0
+            return{
+                increment: function(){
+                    return counter++
+                },
+                decrement: function(){
+                    return counter--
+                }
+            }
+        }
+        const handleCounter = counterClosures()
+        console.log(handleCounter.increment(), handleCounter.increment(), handleCounter.increment(), handleCounter.increment())
+        console.log(handleCounter.decrement(),handleCounter.decrement(), handleCounter.decrement())
+
+
+        function createUser(name, age){
+            return{
+                getName: function(){
+                    return name
+                },
+                getAge: function(){
+                    return age
+                },
+                setName: function(newName){
+                     name = newName
+                },
+                setAge: function(newAge){
+                    age = newAge
+                }
+            }
+        }
+        const user1 = createUser('Alice', 25)
+        console.log(user1.getName())
+        user1.setName('jhon')
+        user1.setAge(33)
+        console.log(user1.getName())
+        console.log(user1.getAge())
+
+        const sortStr = (str) => capStr = str.split('').sort().join('')
+
+        console.log(sortStr('helloo world'))
+
+
+        const countAEIOU = (str) => {
+            let vowels = 'AEIOUaeiou'
+            let splitStr = str.split('')
+
+            let count = 0
+
+            for(let x of str){
+                if(vowels.includes(x)){
+                    count++
+                }
+            }
+            return count
+        }
+        console.log(countAEIOU('hello wolrd'))
+
+        const uniquechars = (str) => {
+            let chars = str.split('')
+
+            return Array.from(new Set(chars)).join('')
+        }
+        console.log(uniquechars('helloo woorlldd'))
+
+        const notRepeatedChar = (str) => {
+           return str.split('').find((item,index, arr) => arr.filter(arrItem => arrItem === item).length === 1 )
+        }
+        console.log(notRepeatedChar('hello worldd'))
+
 
     </script>
 </body>
