@@ -522,6 +522,33 @@
         }
         console.log(removeValue([1,2,3,4,4,2],3))
 
+
+        const findEvenValues = (n) => {
+            let arr = []
+            for(let i = 1; i < n; i++){
+                i % 2 === 0 ? arr.push(i) : ''
+            }
+            return arr
+        }
+        console.log(findEvenValues(16))
+
+        const checkOrder = (arr) => !arr.sort() ? arr.sort() : arr
+        console.log(checkOrder(["Banana", "Orange", "Apple", "Mango"]))
+
+        
+        const largestEventNum = (arr) => {
+            let res = []
+
+            for(let x of arr){
+                x % 2 === 0 ? res.push(x) : ''
+            }
+            return res.reduce((small , large) => large > small ? large : small)
+        }
+        console.log(largestEventNum([1,2,3,4,5,6,7,8,9,10,11,12]))
+
+
+        const nReplace$ = (str) =>  str.replace(/[0-9]/, '$')
+        console.log(nReplace$('hello2 world3'))
         
 
     </script>
