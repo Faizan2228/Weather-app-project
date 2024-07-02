@@ -39,14 +39,14 @@
         };
 
         console.log(company.employees.employee1.name, company.employees.employee2.age)
-        
+
         const calculator = {
             a: 5,
             b: 3,
-            add: function(){
+            add: function () {
                 return this.a + this.b
             },
-            subtract: function(){
+            subtract: function () {
                 return this.a - this.b
             }
         }
@@ -60,11 +60,11 @@
         }
         delete car.make
 
-        for (let[key, value] of Object.entries(car)){
+        for (let [key, value] of Object.entries(car)) {
             console.log(`key is ${key} and value is ${value}`)
         }
 
-        
+
 
         const user = {
             username: 'jhondoe',
@@ -75,8 +75,8 @@
             }
         }
 
-        const {username, email} = user
-        const {city, zip} = user.address
+        const { username, email } = user
+        const { city, zip } = user.address
         console.log(city, zip, username, email)
 
 
@@ -90,7 +90,7 @@
             b: 4
         }
 
-        const concatObj = {...obj1, ...obj2}
+        const concatObj = { ...obj1, ...obj2 }
         console.log(concatObj)
 
 
@@ -101,11 +101,11 @@
         const palindromeString = (str) => {
 
             let cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
-            
-           let reverseStr = cleanedStr.split('').reverse().join('');
 
-           return reverseStr === str.toLowerCase
-           
+            let reverseStr = cleanedStr.split('').reverse().join('');
+
+            return reverseStr === str.toLowerCase
+
         }
 
         console.log(palindromeString('raceCar'))
@@ -116,8 +116,8 @@
 
             let count = 0
 
-            for(let char of str){
-                if(vowels.includes(char)){
+            for (let char of str) {
+                if (vowels.includes(char)) {
                     count++
                 }
             }
@@ -131,8 +131,8 @@
 
             let longestOne = '';
 
-            for(let word of words){
-                if(word.length > longestOne.length){
+            for (let word of words) {
+                if (word.length > longestOne.length) {
                     longestOne = word
                 }
             }
@@ -154,7 +154,7 @@
             let titleWords = ''
 
             let captailWords = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            
+
             return captailWords.join(' ')
 
         }
@@ -165,9 +165,9 @@
 
             let removeDuplicate = new Set()
 
-            for(let char of words){
+            for (let char of words) {
                 removeDuplicate.add(char)
-                
+
             }
             return [...removeDuplicate].join('')
 
@@ -180,9 +180,9 @@
 
             let str1Split = str1.split('').sort().join('')
             let str2Split = str2.split('').sort().join('')
-           
+
             return str1Split === str2Split
-            
+
         }
         console.log(anagramProgram('racecar', 'carrace'))
 
@@ -210,7 +210,7 @@
 
             let count = 0
 
-            for(let word of words){
+            for (let word of words) {
                 count += 1
             }
 
@@ -219,79 +219,79 @@
         console.log(countWords('hello world there it is hey'))
 
         const sumOfArr = (a) => {
-            return a.reduce((sum, current) => sum + current,0)
+            return a.reduce((sum, current) => sum + current, 0)
         }
-        console.log(sumOfArr([1,2,3,4,5]))
+        console.log(sumOfArr([1, 2, 3, 4, 5]))
 
         const findMax = (arr) => {
-             Math.max(...arr)
-             return arr.reverse()
+            Math.max(...arr)
+            return arr.reverse()
 
         }
-        console.log(findMax([1,23,3,4,5]))
+        console.log(findMax([1, 23, 3, 4, 5]))
 
-        const checkElement = (arr1,arr2) => {
+        const checkElement = (arr1, arr2) => {
             return arr1.includes(arr2)
         }
-        console.log(checkElement([12,13,14,15],14))
+        console.log(checkElement([12, 13, 14, 15], 14))
 
 
         const removeDuplicate = (arr) => [...new Set(arr)]
-        console.log(removeDuplicate([1,2,3,3,4,5,4,5]))
+        console.log(removeDuplicate([1, 2, 3, 3, 4, 5, 4, 5]))
 
         const removeDuplicate2 = (arr) => {
             let result = []
 
             arr.filter((e) => {
-                if(!result.includes(e)){
+                if (!result.includes(e)) {
                     result.push(e)
                 }
             })
-            
+
             return result
 
         }
-        console.log(removeDuplicate2([1,2,3,3,4,5,4,5]))
+        console.log(removeDuplicate2([1, 2, 3, 3, 4, 5, 4, 5]))
 
 
-        const mergedArr = (arr1, arr2) => [...arr1,...arr2]
-        console.log(mergedArr(['hello'],['world']))
+        const mergedArr = (arr1, arr2) => [...arr1, ...arr2]
+        console.log(mergedArr(['hello'], ['world']))
 
 
         const intersectArr = (arr1, arr2) => {
             return arr1.filter((arr) => arr2.includes(arr))
         }
-        console.log(intersectArr([1,2,3],[2,3,4]))
+        console.log(intersectArr([1, 2, 3], [2, 3, 4]))
 
 
         const flattenArr = (arr) => arr.flat()
-        console.log(flattenArr([[1,2],[2,3,4]]))
+        console.log(flattenArr([[1, 2], [2, 3, 4]]))
 
-        
+
         const chunkArr = (arr, size) => {
             let result = []
 
-            for(let i = 0; i < arr.length; i += size){
+            for (let i = 0; i < arr.length; i += size) {
                 result.push(arr.slice(i, i + size))
             }
             return result
 
         }
-        console.log(chunkArr([1,2,3,4,5],2))
+        console.log(chunkArr([1, 2, 3, 4, 5], 2))
 
 
-        const findElement = (arr,e) => arr.indexOf(e)
-        console.log(findElement([1,2,3,4,5],5))
+        const findElement = (arr, e) => arr.indexOf(e)
+        console.log(findElement([1, 2, 3, 4, 5], 5))
 
 
-        const positiveArr = (arr) => arr.every((a) => a>0)
-        console.log(positiveArr([-2,3,4,-5]))
+        const positiveArr = (arr) => arr.every((a) => a > 0)
+        console.log(positiveArr([-2, 3, 4, -5]))
 
 
 
         const sumNaturalNum = (n) => {
             let sum = 0
-            for(let i = 0; i <= n; i++){
+            for (let i = 0; i <= n; i++) {
                 sum += i
             }
             return sum
@@ -301,16 +301,16 @@
 
         const eachElemt = (arr) => {
             let result = ''
-            for(let i of arr){
+            for (let i of arr) {
                 result += i
             }
             return result
         }
-        console.log(eachElemt(['h','e','l','l','o']))
+        console.log(eachElemt(['h', 'e', 'l', 'l', 'o']))
 
         const reverseStr = (str) => {
             let result = ''
-            for(let i = str.length - 1; i >= 0; i--){
+            for (let i = str.length - 1; i >= 0; i--) {
                 result += str[i]
             }
             return result
@@ -320,43 +320,43 @@
         const findAvg = (arr) => {
             let sum = 0
 
-            for(let i = 0; i < arr.length; i++){
+            for (let i = 0; i < arr.length; i++) {
                 sum += arr[i]
             }
             return sum / arr.length
 
         }
-        console.log(findAvg([1,2,3,4,5]))
+        console.log(findAvg([1, 2, 3, 4, 5]))
 
         const starLoop = (num) => {
-            for(let i = 1; i <= num; i++){
+            for (let i = 1; i <= num; i++) {
                 console.log('*'.repeat(i))
             }
         }
         starLoop(1)
 
         const calcultor = (operator, num1, num2) => {
-            if(operator === '+'){
+            if (operator === '+') {
                 return num1 + num2;
             }
-            else if(operator === '*'){
+            else if (operator === '*') {
                 return num1 * num2
-            }else if(operator === '/'){
+            } else if (operator === '/') {
                 return num1 / num2
             }
-            else if(operator === '-'){
+            else if (operator === '-') {
                 return num1 - num2
             }
-            else{
+            else {
                 console.log('enter numbers with operator')
             }
         }
-        console.log(calcultor('-', 2,2))
+        console.log(calcultor('-', 2, 2))
 
         const countOccurence = (str1, str2) => {
             let count = 0
-            for(let x of str1){
-                if(str2.includes(x)){
+            for (let x of str1) {
+                if (str2.includes(x)) {
                     count++
                 }
             }
@@ -366,14 +366,14 @@
 
         const firstLetterCapital = (str) => {
             let adjustedStr = str.split(' ')
-            let capital = adjustedStr.map((word) =>{
+            let capital = adjustedStr.map((word) => {
                 return word.charAt(0).toUpperCase() + word.slice(1)
-           })
+            })
             return capital.join(' ')
         }
         console.log(firstLetterCapital('hello world hello world'))
 
-        
+
         const letterVowels = (str) => {
 
             let vowels = 'aeiouAEIOU'
@@ -381,40 +381,40 @@
 
             let count = 0
 
-            for(let x of strSplited){
-                if(vowels.includes(x)){
-                     count++
+            for (let x of strSplited) {
+                if (vowels.includes(x)) {
+                    count++
                 }
             }
             return count
 
-            
+
         }
         console.log(letterVowels('hello world hello world'))
 
-        function greet(name){
+        function greet(name) {
             return name
         }
         console.log(greet('amaan'));
 
-        (function(){
+        (function () {
             console.log("Amaan")
         })();
 
-        const greetings = function(name){
+        const greetings = function (name) {
             return name
         }
         console.log(greetings("Amaan"))
 
-        function Person(name, age){
+        function Person(name, age) {
             this.name = name
             this.age = age
             return this.name + this.age
         }
-        const instanceObj = new Person('Amaan',23)
+        const instanceObj = new Person('Amaan', 23)
         console.log(instanceObj.age)
 
-        async function greetByName(){
+        async function greetByName() {
             console.log('amaan')
         }
         console.log(greetByName())
@@ -425,46 +425,46 @@
 
             let maxLength = ''
 
-            for(let x of words){
-                if(x.length > maxLength.length){
+            for (let x of words) {
+                if (x.length > maxLength.length) {
                     maxLength = x
                 }
             }
             return maxLength.length
         }
         console.log(findLongestWord('hello world hellloo ll'))
-        
+
 
         const removeFalseValues = (arr) => {
             return arr.filter(Boolean)
         }
         console.log(removeFalseValues([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]))
 
-        const countAppearance = (arr,str) => arr.reduce((count, e) => (e === str ? count+ 1 : count), 0)
+        const countAppearance = (arr, str) => arr.reduce((count, e) => (e === str ? count + 1 : count), 0)
 
         console.log(countAppearance([1, 2, 3, 4, 3, 2, 1, 3], 1))
 
 
         const repeatString = (num, str) => num > 0 ? str.repeat(num) : str
 
-        console.log(repeatString(5,'hello '))
+        console.log(repeatString(5, 'hello '))
 
 
 
-        const truncateStr = (num, str) => 
-            str.length > num ? str.slice(0,num) + '...' : str
+        const truncateStr = (num, str) =>
+            str.length > num ? str.slice(0, num) + '...' : str
         console.log(truncateStr(4, 'helllo'))
 
 
 
-        const fruits = {bananas: 300, Orange: 200, Apples: 500}
-        for(let [key, value] of Object.entries(fruits)){
+        const fruits = { bananas: 300, Orange: 200, Apples: 500 }
+        for (let [key, value] of Object.entries(fruits)) {
             console.log(`key is ${key} and values is ${value}`)
         }
 
         const originalObj = {
             name: 'Amaan',
-            country : 'india',
+            country: 'india',
         }
         const cloneObj = Object.assign({}, originalObj)
         console.log(cloneObj)
@@ -473,14 +473,14 @@
 
             let count = 0
 
-            for(let x in obj){
+            for (let x in obj) {
                 count++
-}
-    return count
+            }
+            return count
         }
         console.log(countKeys({
             name: 'Amaan',
-            country : 'india',
+            country: 'india',
             age: 23
         }))
 
@@ -489,7 +489,7 @@
 
             let res = ''
 
-            for(let i = 0; i < len; i++){
+            for (let i = 0; i < len; i++) {
                 let getRandomStr = characters.charAt(Math.floor(Math.random() * characters.length))
                 res += getRandomStr
 
@@ -503,7 +503,7 @@
         console.log(trimStr)
 
         const originalObj2 = {
-            name:'Amaan',
+            name: 'Amaan',
             country: 'india'
         }
         let res = JSON.stringify(originalObj2)
@@ -512,20 +512,20 @@
         const removeValue = (arr, value) => {
             let res = []
 
-            for(let x of arr){
-                if(x !== value){
+            for (let x of arr) {
+                if (x !== value) {
                     res.push(x)
                 }
             }
 
-        return Array.from(new Set(res))
+            return Array.from(new Set(res))
         }
-        console.log(removeValue([1,2,3,4,4,2],3))
+        console.log(removeValue([1, 2, 3, 4, 4, 2], 3))
 
 
         const findEvenValues = (n) => {
             let arr = []
-            for(let i = 1; i < n; i++){
+            for (let i = 1; i < n; i++) {
                 i % 2 === 0 ? arr.push(i) : ''
             }
             return arr
@@ -535,26 +535,26 @@
         const checkOrder = (arr) => !arr.sort() ? arr.sort() : arr
         console.log(checkOrder(["Banana", "Orange", "Apple", "Mango"]))
 
-        
+
         const largestEventNum = (arr) => {
             let res = []
 
-            for(let x of arr){
+            for (let x of arr) {
                 x % 2 === 0 ? res.push(x) : ''
             }
-            return res.reduce((small , large) => large > small ? large : small)
+            return res.reduce((small, large) => large > small ? large : small)
         }
-        console.log(largestEventNum([1,2,3,4,5,6,7,8,9,10,11,12]))
+        console.log(largestEventNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]))
 
 
-        const nReplace$ = (str) =>  str.replace(/[0-9]/, '$')
+        const nReplace$ = (str) => str.replace(/[0-9]/, '$')
         console.log(nReplace$('hello2 world3'))
 
 
-        function parent(){
+        function parent() {
             var carName = 'Maratui';
 
-            function child(){
+            function child() {
                 console.log(carName)
                 carName = "Mercidies"
                 console.log(carName)
@@ -563,29 +563,29 @@
             return child()
 
         }
-        parent()   
-        
-        
-        function createCounter(){
+        parent()
+
+
+        function createCounter() {
             let count = 0
-            return function(){
+            return function () {
                 return count++
             }
         }
         const increaseCounter = createCounter()
-        console.log(increaseCounter(),increaseCounter(),increaseCounter())
+        console.log(increaseCounter(), increaseCounter(), increaseCounter())
 
 
-        function createPerson(name){
+        function createPerson(name) {
             let age = 0
-            return{
-                getAge: function(){
+            return {
+                getAge: function () {
                     return age
                 },
-                growOlder: function(){
+                growOlder: function () {
                     return age++
                 },
-                getName: function(){
+                getName: function () {
                     return name
                 }
             }
@@ -599,34 +599,34 @@
         console.log(personClousers.getAge())
 
 
-        const counterClosures = function(){
+        const counterClosures = function () {
             let counter = 0
-            return{
-                increment: function(){
+            return {
+                increment: function () {
                     return counter++
                 },
-                decrement: function(){
+                decrement: function () {
                     return counter--
                 }
             }
         }
         const handleCounter = counterClosures()
         console.log(handleCounter.increment(), handleCounter.increment(), handleCounter.increment(), handleCounter.increment())
-        console.log(handleCounter.decrement(),handleCounter.decrement(), handleCounter.decrement())
+        console.log(handleCounter.decrement(), handleCounter.decrement(), handleCounter.decrement())
 
 
-        function createUser(name, age){
-            return{
-                getName: function(){
+        function createUser(name, age) {
+            return {
+                getName: function () {
                     return name
                 },
-                getAge: function(){
+                getAge: function () {
                     return age
                 },
-                setName: function(newName){
-                     name = newName
+                setName: function (newName) {
+                    name = newName
                 },
-                setAge: function(newAge){
+                setAge: function (newAge) {
                     age = newAge
                 }
             }
@@ -649,8 +649,8 @@
 
             let count = 0
 
-            for(let x of str){
-                if(vowels.includes(x)){
+            for (let x of str) {
+                if (vowels.includes(x)) {
                     count++
                 }
             }
@@ -666,9 +666,152 @@
         console.log(uniquechars('helloo woorlldd'))
 
         const notRepeatedChar = (str) => {
-           return str.split('').find((item,index, arr) => arr.filter(arrItem => arrItem === item).length === 1 )
+            return str.split('').find((item, index, arr) => arr.filter(arrItem => arrItem === item).length === 1)
         }
         console.log(notRepeatedChar('hello worldd'))
+
+
+        const people = [
+            { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' },
+            { firstName: 'Terri', lastName: 'Bishop', DOB: '02/04/1989', department: 'Development', salary: '35000' },
+            { firstName: 'Jar', lastName: 'Burke', DOB: '11/01/1985', department: 'Marketing', salary: '38000' },
+            { firstName: 'Julio', lastName: 'Miller', DOB: '12/07/1991', department: 'Sales', salary: '40000' },
+            { firstName: 'Chester', lastName: 'Flores', DOB: '03/15/1988', department: 'Development', salary: '41000' },
+            { firstName: 'Madison', lastName: 'Marshall', DOB: '09/22/1980', department: 'Sales', salary: '32000' },
+            { firstName: 'Ava', lastName: 'Pena', DOB: '11/02/1986', department: 'Development', salary: '38000' },
+            { firstName: 'Gabriella', lastName: 'Steward', DOB: '08/26/1994', department: 'Marketing', salary: '46000' },
+            { firstName: 'Charles', lastName: 'Campbell', DOB: '09/04/1977', department: 'Sales', salary: '42000' },
+            { firstName: 'Tiffany', lastName: 'Lambert', DOB: '05/11/1990', department: 'Development', salary: '34000' },
+            { firstName: 'Antonio', lastName: 'Gonzalez', DOB: '03/24/1985', department: 'Office Management', salary: '49000' },
+            { firstName: 'Aaron', lastName: 'Garrett', DOB: '09/04/1985', department: 'Development', salary: '39000' }
+        ];
+
+
+        people.map((item) => console.log(item.firstName + item.lastName))
+
+        let dobSort = people.sort((perA, perB) => new Date(perA.DOB) - new Date(perB.DOB))
+        console.log(dobSort)
+
+        const orders = [
+            {
+                orderId: '123', customerId: '123', deliveryDate: '01-01-2020', delivered: true,
+                items: [
+                    { productId: '123', price: 55 },
+                    { productId: '234', price: 30 }
+                ]
+            },
+            {
+                orderId: '124', customerId: '124', deliveryDate: '01-02-2020', delivered: false,
+                items: []
+            },
+            {
+                orderId: '945', customerId: '234', deliveryDate: '05-01-2020', delivered: false,
+                items: [
+                    { productId: '678', price: 80 }
+                ]
+            },
+            {
+                orderId: '456', customerId: '345', deliveryDate: '12-01-2020', delivered: true,
+                items: [
+                    { productId: '789', price: 12 }
+                ]
+            },
+            {
+                orderId: '578', customerId: '456', deliveryDate: '12-01-2020', delivered: true,
+                items: [
+                    { productId: '981', price: 43 },
+                    { productId: '123', price: 55 }
+                ]
+            }
+        ];
+
+        let getCustomerID = orders.filter(order => order.customerId === '234' && !order.delivered)
+        console.log(getCustomerID)
+
+
+        let newPropTotal = orders.map(order => ({ ...order, orderTotal: order.items.reduce((acc, item) => acc + item.price, 0) }))
+
+        console.log(newPropTotal)
+
+
+        const allDelivered = orders.every(order => order.delivered === true)
+        console.log(allDelivered)
+
+        const checkAnyOrders = orders.some(order => order.items.length)
+        console.log(checkAnyOrders)
+
+        const getTotalOrders = orders.reduce((acc, order) => acc + order.items.reduce((acc, item) => acc + (item.productId === '123'), 0), 0)
+        console.log(getTotalOrders)
+
+
+
+        const users = [
+            { id: '88124bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
+            { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
+            { id: '71053852-7440-4e44-838c-ddac24611050', firstName: 'Jar', lastName: 'Burke' },
+            { id: 'd456e3af-596a-4224-b1dc-dd990a34c9cf', firstName: 'Julio', lastName: 'Miller' },
+            { id: '74053852-7440-444-838c-ddac24611050', firstName: 'Chester', lastName: 'Flores' },
+            { id: 'b4a306b-8b95-4185-b918-434dbe010985', firstName: 'Madison', lastName: 'Marshall' },
+            { id: '0e904be-e3b0-41c9-b7a2-5a0233c38e4c', firstName: 'Ava', lastName: 'Pena' },
+            { id: '710ce45a-bdca-4067-968b-d908e79276ce', firstName: 'Gabriella', lastName: 'Steward' },
+            { id: '9525c2d-6fcd-4d88-9ac4-a44eaf3a43e6', firstName: 'Charles', lastName: 'Campbell' },
+            { id: 'e789565f-fa5a-4d5e-8f6c-dd126cf995be', firstName: 'Madison', lastName: 'Lambert' },
+            { id: '58a137b-4b15-76vg-b95b-11fe01617b64', firstName: 'harry', lastName: 'osborn' },
+            { id: '98a137b-4b15-76vg-b95b-11fe01617b64', firstName: 'peter', lastName: 'parker' },
+        ];
+
+
+        const comments = [
+            { userid: '88124bea-3825-4237-a0d1-efb6b92d37a4', text: 'Great Job!' },
+            { userid: '76053852-7440-444-838c-ddac24611050', text: 'Well done, I think' },
+            { userid: 'e789565f-fa5a-4d5e-8f6c-dd126cf995be', text: 'How do you do that?' },
+            { userid: '74053852-7440-444-838c-ddac24611050', text: 'OK great thanks' },
+            { userid: 'b4a306cb-8b95-4f85-b9f8-434dbe010985', text: 'Cool, thanks!' },
+            { userid: '9525c2d-6fcd-4d88-9ac4-a44eaf3a436', text: 'Nice one' },
+            { userid: '6ee904be-e3b0-41c9-b7a2-5a0233c38e4c', text: 'Got it.' },
+            { userid: '9525c2d-6fcd-4d88-9ac4-a44eaf3a436', text: 'Thanks!' },
+            { userid: '58a137b-4b15-47c1-b95b-11fe01617b64', text: 'Great stuff!' },
+            { userid: '58a137b-4b15-76vg-b95b-11fe01617b64', text: '' },
+           { userid: '98a137b-4b15-76vg-b95b-11fe01617b64', text: '' }
+        ];
+
+        const getId = users.find(user => user.firstName === 'Madison')
+        console.log(getId)
+
+        const firstComment = users.find(user => user.id === comments[0].userid)
+        console.log(firstComment)
+
+        const specificComment = comments.find(comment => comment.text === 'OK great thanks').userid
+
+        const commentedUser = users.find(user => user.id === specificComment)
+        console.log(specificComment, commentedUser.firstName + commentedUser.lastName)
+
+        const nameComment = comments.map(comment => {
+            const user = users.find(user => user.id === comment.userid);
+
+            if (user) {
+                const { firstName, lastName } = user;
+                return { ...comment, firstName, lastName };
+            } else {
+                return comment;
+            }
+        });
+
+        console.log(nameComment);
+
+
+        const notCommented = users.filter(user => !comments.find(comment => comment.userid === user.id))
+        console.log(notCommented)
+
+
+
+
+
+
+
+
+
+
 
 
     </script>
