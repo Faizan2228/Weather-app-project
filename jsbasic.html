@@ -1039,6 +1039,27 @@
 }];
 
 
+    const nestedArrs = accounts[0].tags.flat()
+    console.log(nestedArrs)
+
+
+    const checkKeyExists = accounts[0].tags.flat().includes('consectetur')
+    console.log(checkKeyExists)
+
+    
+    const getAllTags = accounts.map(account => account.tags.join(',')).join(',')
+    console.log(getAllTags)
+
+
+    const getFriends = accounts.map(({friends}) => friends.map(({name}) => name)).flat()
+    console.log(getFriends)
+    
+
+    const ageAndBalance = accounts.filter(({age, balance}) => age <= 30 && parseInt(balance.replace(/\D/g,'')) > 1500
+    ).map(({friends}) => friends.map(({name}) => name)).flat()
+    console.log(ageAndBalance)
+
+
 
     
 
