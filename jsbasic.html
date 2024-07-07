@@ -1094,7 +1094,6 @@
             .catch(err => console.log(err))
 
 
-            
 
         function areYouPlayingBanjo(name) {
 
@@ -1102,6 +1101,29 @@
 
         }
         console.log(areYouPlayingBanjo('ralf'))
+
+
+        function makePalindrome(text) {
+            const reverseStr = text.split('').reverse().join('').toLowerCase()
+            return text === reverseStr
+        }
+        console.log(makePalindrome('abcba'))
+
+
+        function highAndLow(numbers) {
+            // ...
+            let num = numbers.split(' ').map(n => Number(n))
+            let max = Math.max(...num)
+            let min = Math.min(...num)
+            return `' ${max} ${min}'`
+        }
+
+        console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
+
+        // let numstr = '1  234'
+        // let numthem = Number(numstr)
+        // console.log(numthem)
+
 
 
 
