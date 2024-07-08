@@ -1065,7 +1065,7 @@
                 const Api = await fetch('https://jsonplaceholder.typicode.com/users')
 
                 const data = await Api.json()
-                console.log(data)
+                // console.log(data)
             }
             catch (err) {
                 console.log(err)
@@ -1090,7 +1090,7 @@
         })
 
         promise
-            .then(data => console.log(data))
+            // .then(data => console.log(data))
             .catch(err => console.log(err))
 
 
@@ -1120,12 +1120,45 @@
 
         console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
 
-        // let numstr = '1  234'
-        // let numthem = Number(numstr)
-        // console.log(numthem)
+        const fakeBinary = (x) => {
+            return x.split('').map(n =>
+                Number(n) < 5 ? 0 : 1
+
+            )
+
+        }
+        console.log(fakeBinary('45385593107843568'))
+
+
+        function longest(s1, s2) {
+            // your code
+            let join = s1 + s2
+            let sortedOrder = join.split('').sort().join('')
+            let result = ''
+
+            for (let x of sortedOrder) {
+                if (!result.includes(x)) {
+                    result += x
+                }
+            }
+            return result
+        }
+        console.log(longest("aretheyhere", "yestheyarehere"))
 
 
 
+        function isIsogram(str) {
+            let strSplit = str.split('')
+            let unique;
+
+            for (let x of strSplit) {
+                if (str.indexOf(x, -1)) {
+                    unique = true
+                }
+            }
+            return unique
+        }
+        console.log(isIsogram("Dermatoglyphics"))
 
     </script>
 </body>
