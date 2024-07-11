@@ -9,6 +9,12 @@
 
 <body>
 
+    <div id="container">
+        <button>bt1</button>
+        <button>btn2</button>
+        <button>btn3</button>
+    </div>
+
     <script>
 
         const person = {
@@ -1159,6 +1165,113 @@
             return unique
         }
         console.log(isIsogram("Dermatoglyphics"))
+
+
+        function onlyDuplicates(str) {
+            let res = ''
+            for(let x of str){
+                if(res.includes(x)){
+                    res += x
+                }
+            }
+            return res
+        }
+        console.log(onlyDuplicates('abccdefee'))
+
+        const strReverse = (str) => {
+            let res = ''
+
+            for(let i = str.length - 1; i >= 0; i--){
+                res += str[i]
+            }
+            return res
+        }
+        console.log(strReverse('hello'))
+
+
+        function outerFunc(){
+            let count = 0
+
+            return{
+                increment: function(){
+                return count++
+            },
+
+            decrement: function(){
+                return count--
+            }
+            }
+        }
+        const counter = outerFunc()
+        console.log(counter.increment())
+        console.log(counter.increment())
+        console.log(counter.increment())
+        console.log(counter.decrement())
+        console.log(counter.decrement())
+
+
+        const doubledValue = arr => arr.map(a => a * 2)
+        
+        console.log(doubledValue([1,2,3,4]))
+
+        const fetchData = new Promise((resolve, reject) => {
+            fetch('https://jsonplaceholder.typicode.com/users').then(resp => {
+                if(!resp.ok){
+                    reject(new Error('unable to fetch data'))
+                }
+                return resp.json()
+            })
+            .then(data => resolve(data))
+            .catch(err => reject(err))
+        })
+
+        fetchData
+        // .then(data => console.log(data))
+        .catch(err => console.log(err))
+
+        document.getElementById('container').addEventListener('click', (e)=>{
+            if(e.target.tagName === 'BUTTON'){
+                e.target.style.backgroundColor = 'red'
+                console.log(e.target.textContent)
+            }
+        })
+
+        const longNum = (str) => {
+            let words = str.split(' ')
+
+            let maxLen = 0
+            let res = ''
+
+            for(let x of words){
+                if(x.length > maxLen){
+                    maxLen = x.length
+                    res = x
+                }
+            }
+            return res
+        }
+        console.log(longNum('the dog barked loud and louder'))
+
+
+        const fizzBuzz = () => {
+
+            for(let i = 0; i <= 10; i++){
+                if(i % 3 === 0 && i % 5 === 0){
+                    console.log('fizzBuzz')
+                }else if(i % 3 === 0){
+                    console.log('fizz')
+                }else if(i % 5 === 0){
+                    console.log('Buzz')
+                }else{
+                    console.log(i)
+                }
+            }
+
+        }
+        fizzBuzz()
+
+
+
 
     </script>
 </body>
