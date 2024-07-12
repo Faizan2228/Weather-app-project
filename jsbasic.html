@@ -1169,8 +1169,8 @@
 
         function onlyDuplicates(str) {
             let res = ''
-            for(let x of str){
-                if(res.includes(x)){
+            for (let x of str) {
+                if (res.includes(x)) {
                     res += x
                 }
             }
@@ -1181,7 +1181,7 @@
         const strReverse = (str) => {
             let res = ''
 
-            for(let i = str.length - 1; i >= 0; i--){
+            for (let i = str.length - 1; i >= 0; i--) {
                 res += str[i]
             }
             return res
@@ -1189,17 +1189,17 @@
         console.log(strReverse('hello'))
 
 
-        function outerFunc(){
+        function outerFunc() {
             let count = 0
 
-            return{
-                increment: function(){
-                return count++
-            },
+            return {
+                increment: function () {
+                    return count++
+                },
 
-            decrement: function(){
-                return count--
-            }
+                decrement: function () {
+                    return count--
+                }
             }
         }
         const counter = outerFunc()
@@ -1211,26 +1211,26 @@
 
 
         const doubledValue = arr => arr.map(a => a * 2)
-        
-        console.log(doubledValue([1,2,3,4]))
+
+        console.log(doubledValue([1, 2, 3, 4]))
 
         const fetchData = new Promise((resolve, reject) => {
             fetch('https://jsonplaceholder.typicode.com/users').then(resp => {
-                if(!resp.ok){
+                if (!resp.ok) {
                     reject(new Error('unable to fetch data'))
                 }
                 return resp.json()
             })
-            .then(data => resolve(data))
-            .catch(err => reject(err))
+                .then(data => resolve(data))
+                .catch(err => reject(err))
         })
 
         fetchData
-        // .then(data => console.log(data))
-        .catch(err => console.log(err))
+            // .then(data => console.log(data))
+            .catch(err => console.log(err))
 
-        document.getElementById('container').addEventListener('click', (e)=>{
-            if(e.target.tagName === 'BUTTON'){
+        document.getElementById('container').addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
                 e.target.style.backgroundColor = 'red'
                 console.log(e.target.textContent)
             }
@@ -1242,8 +1242,8 @@
             let maxLen = 0
             let res = ''
 
-            for(let x of words){
-                if(x.length > maxLen){
+            for (let x of words) {
+                if (x.length > maxLen) {
                     maxLen = x.length
                     res = x
                 }
@@ -1255,14 +1255,14 @@
 
         const fizzBuzz = () => {
 
-            for(let i = 0; i <= 10; i++){
-                if(i % 3 === 0 && i % 5 === 0){
+            for (let i = 0; i <= 10; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
                     console.log('fizzBuzz')
-                }else if(i % 3 === 0){
+                } else if (i % 3 === 0) {
                     console.log('fizz')
-                }else if(i % 5 === 0){
+                } else if (i % 5 === 0) {
                     console.log('Buzz')
-                }else{
+                } else {
                     console.log(i)
                 }
             }
@@ -1271,7 +1271,32 @@
         fizzBuzz()
 
 
+        const replaceStr = str => str.replace(/h/gi, 'C')
+        console.log(replaceStr('hello world har hare'))
 
+
+        const random = (len) => {
+            let chars = 'q!@#$%^&*()_+wertyuiopasdfghjklzxcvbnm'
+            let randomChar = ''
+
+            for (let i = 0; i < len; i++) {
+                randomChar += chars.charAt(Math.floor(Math.random() * chars.length))
+            }
+            return randomChar;
+        }
+        console.log(random(7))
+
+
+
+        function countOccurrences(str, char) {
+            return str.split('').filter(c => c === char).length;
+        }
+
+        console.log(countOccurrences("hello", "l"))
+
+
+        const titleCase = str => str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        console.log(titleCase('hello wolrd'))
 
     </script>
 </body>
