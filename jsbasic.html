@@ -1298,6 +1298,29 @@
         const titleCase = str => str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
         console.log(titleCase('hello wolrd'))
 
+
+        const checkNum = (num) => num >= 0 ? 'positive' : 'Negetive'
+        console.log(checkNum(-9))
+
+        const mathTable = (n) => {
+            let result = ''
+
+            for(let i = 1; i <=10; i++){
+                let num = n * i
+                result += n + ' x ' + i + ' = ' + num + '\n'
+            }
+            return result
+        }
+        console.log(mathTable(5))
+
+
+        const countChar = (str, char) => str.split('').filter(c => c===char).length
+        console.log(countChar('helllo woolrd', 'l'))
+
+
+        const palindromeLoop = (str) => str.split('').reverse().join('')
+        console.log(palindromeLoop('was it A car or a cat i saw'))
+
     </script>
 </body>
 
