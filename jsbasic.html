@@ -1321,6 +1321,19 @@
         const palindromeLoop = (str) => str.split('').reverse().join('')
         console.log(palindromeLoop('was it A car or a cat i saw'))
 
+
+        function onlyDuplicates(str) {
+            let res = ''
+            for (let x of str) {
+                if (res.includes(x)) {
+                    res += x
+                }
+            }
+            return res
+        }
+        console.log(onlyDuplicates('abccdefee'))
+
+
     </script>
 </body>
 
