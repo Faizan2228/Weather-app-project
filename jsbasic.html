@@ -831,33 +831,33 @@
 
         // // setInterval(myDateFunc, 1000)
 
-         const getUserData = () => {
-         const userAPI = fetch('https://jsonplaceholder.typicode.com/users').then(resp => {
-             if(!resp.ok){
-                 throw new Error('unable to fetch data')
-             }
-             return resp.json()
-         })
-         .then(data => {
-             console.log(data)
-         })
-         .catch(err => console.log(err))
+        const getUserData = () => {
+            const userAPI = fetch('https://jsonplaceholder.typicode.com/users').then(resp => {
+                if (!resp.ok) {
+                    throw new Error('unable to fetch data')
+                }
+                return resp.json()
+            })
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(err => console.log(err))
         }
 
         // getUserData()
 
 
-        // const getUsers = async () => {
-        //     try{
-        //     const userAPI = await fetch('https://jsonplaceholder.typicode.com/users');
+        const getUsers = async () => {
+            try {
+                const userAPI = await fetch('https://jsonplaceholder.typicode.com/users');
 
-        //     const data = await userAPI.json()
-        //     console.log(data)
-        //     } catch (err){
-        //         console.log(err)
-        //     }
-        // }
-        // getUsers()
+                const data = await userAPI.json()
+                console.log(data)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        getUsers()
 
 
         const users3 = [{
@@ -1305,7 +1305,7 @@
         const mathTable = (n) => {
             let result = ''
 
-            for(let i = 1; i <=10; i++){
+            for (let i = 1; i <= 10; i++) {
                 let num = n * i
                 result += n + ' x ' + i + ' = ' + num + '\n'
             }
@@ -1314,7 +1314,7 @@
         console.log(mathTable(5))
 
 
-        const countChar = (str, char) => str.split('').filter(c => c===char).length
+        const countChar = (str, char) => str.split('').filter(c => c === char).length
         console.log(countChar('helllo woolrd', 'l'))
 
 
